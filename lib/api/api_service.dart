@@ -1,3 +1,4 @@
 class ApiService {
-  static const apiKey = 'AIzaSyAoqTyHs7gmGnfNXk-nouxty9WEJ5muWm8';
+  static const apiKey = 'YOUR_API_KEY'; // Add your API key here
+  // Its not a good practice to store API key in the code on production
 }
