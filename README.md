@@ -6,6 +6,11 @@ Flutter, Google Gemini Chat Bot with Hive local storage.
 
 This project is a starting point for a Flutter application.
 
+Liked some of my work? Buy me a coffee. Thanks for your support :heart:
+
+<a href="https://www.buymeacoffee.com/raphaelsqu7" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" height=64></a>
+
+
 <div align="center">
   <img src="assets/images/flutter_gemini_course_image.jpg">
 </div>
