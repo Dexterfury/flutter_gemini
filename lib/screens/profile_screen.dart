@@ -44,7 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   // get user data
   void getUserData() {
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       // get user data fro box
       final userBox = Boxes.getUser();
 

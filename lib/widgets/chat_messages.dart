@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_gemini/models/message.dart';
 import 'package:flutter_gemini/providers/chat_provider.dart';

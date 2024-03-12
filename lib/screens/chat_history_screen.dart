@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gemini/hive/boxes.dart';
 import 'package:flutter_gemini/hive/chat_history.dart';
-import 'package:flutter_gemini/utility/utilites.dart';
 import 'package:flutter_gemini/widgets/chat_history_widget.dart';
 import 'package:flutter_gemini/widgets/empty_history_widget.dart';
 import 'package:hive_flutter/hive_flutter.dart';
