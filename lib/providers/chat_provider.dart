@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gemini/api/api_service.dart';
 import 'package:flutter_gemini/constants.dart';
 import 'package:flutter_gemini/hive/boxes.dart';
@@ -121,17 +122,39 @@ class ChatProvider extends ChangeNotifier {
     if (isTextOnly) {
       _model = _textModel ??
           GenerativeModel(
-            model: setCurrentModel(newModel: 'gemini-pro'),
-            apiKey: ApiService.apiKey,
-          );
+              model: setCurrentModel(newModel: 'gemini-1.0-pro'),
+              apiKey: getApiKey(),
+              generationConfig: GenerationConfig(
+                temperature: 0.4,
+                topK: 32,
+                topP: 1,
+                maxOutputTokens: 4096,
+              ),
+              safetySettings: [
+                SafetySetting(HarmCategory.harassment, HarmBlockThreshold.high),
+                SafetySetting(HarmCategory.hateSpeech, HarmBlockThreshold.high),
+              ]);
     } else {
       _model = _visionModel ??
           GenerativeModel(
-            model: setCurrentModel(newModel: 'gemini-pro-vision'),
-            apiKey: ApiService.apiKey,
-          );
+              model: setCurrentModel(newModel: 'gemini-1.5-flash'),
+              apiKey: getApiKey(),
+              generationConfig: GenerationConfig(
+                temperature: 0.4,
+                topK: 32,
+                topP: 1,
+                maxOutputTokens: 4096,
+              ),
+              safetySettings: [
+                SafetySetting(HarmCategory.harassment, HarmBlockThreshold.high),
+                SafetySetting(HarmCategory.hateSpeech, HarmBlockThreshold.high),
+              ]);
     }
     notifyListeners();
+  }
+
+  String getApiKey() {
+    return dotenv.env['GEMINI_API_KEY'].toString();
   }
 
   // set current page index

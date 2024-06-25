@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gemini/themes/my_theme.dart';
 import 'package:flutter_gemini/providers/chat_provider.dart';
 import 'package:flutter_gemini/providers/settings_provider.dart';
@@ -7,6 +8,8 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await dotenv.load(fileName: ".env");
 
   await ChatProvider.initHive();
 
